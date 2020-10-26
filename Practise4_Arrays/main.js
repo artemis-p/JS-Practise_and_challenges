@@ -12,21 +12,31 @@
 // var recent = flavours[last];
 // console.log(recent);
 
-// var scores = [60, 50, 60, 58, 54, 54, 58, 50, 52, 54, 48, 69];
+var scores = [60, 50, 69, 58, 54, 54, 58, 50, 52, 54, 48, 69];
+var highScore = 0;
+var output;
+var bestSolutions = [];
 
-// function bubbleSolution() {
-//     for (var i = 0; i < scores.length; i++) {
-//         console.log("Bubble solution #" + [i] + " score: " + scores[i]);
-//     }
-// }
+    for (var i = 0; i < scores.length; i++) {
+        output = ("Bubble solution #" + i + " score: " + scores[i]);
+        console.log(output);
+        if (scores[i] > highScore) {
+            highScore = scores[i];
+        }
+    }
 
-// bubbleSolution();
+    console.log("Bubble tests: " + scores.length);  
+    console.log("Highest bubble score: " + highScore);
 
-// var highestScore = Math.max.apply(0, scores);
+    for (var i = 0; i < scores.length; i++) {
+        if (scores[i] == highScore) {
+            bestSolutions.push("#" + [i]);
+        }
+    }
+    console.log("Solutions with highest score: " + bestSolutions);
 
-//     console.log("Bubble tests: " + scores.length);  
-//     console.log("Highest bubble score: " + highestScore);
-//     console.log("Solutions with highest score:")
+
+
 
 
 // var products = ["Icy Mint", "Bubblegum"];
@@ -40,3 +50,14 @@
 //     i += 1;
 // }
 
+
+// Creating new arrays
+
+// var genres = ["80s", "90s", "Electronic","Folk"];
+// // or create an empty array and append new items in it
+// var genres = [];
+// genres[0] = "80s";
+// genres[1] = "90s";
+// // or add them by using the push method
+// genres.push("folk");
+// console.log(genres);
