@@ -59,3 +59,20 @@ if (worthALook) { // the previous function returns false so it's going to execut
 } else {
     console.log("You should really pass on the " + fiat.make + " " + fiat.model);
 }
+
+var chevy = {
+    make: "Chevy",
+    model: "Bel Air",
+    year: 1957,
+    color: "red",
+    passengers: 2,
+    convertible: false,
+    mileage: 1021
+};
+
+var worthALook = prequal(chevy); // false
+if (worthALook) { // the previous function returns false so it's going to execute the second statement  
+    console.log("You gotta check out this " + chevy.make + " " + chevy.model);
+} else {
+    console.log("You should really pass on the " + chevy.make + " " + chevy.model);
+}
