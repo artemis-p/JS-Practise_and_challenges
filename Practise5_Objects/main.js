@@ -179,8 +179,13 @@ var cadi = {
     convertible: false,
     mileage: 12892,
     started: false,
+    fuel: 0,
     start: function(){
-        this.started = true;
+        if (this.fuel > 0) {
+            this.started = true; 
+        } else {
+            alert("The car is on empty, fill up before starting!")
+        }
     },
 
     stop: function(){
@@ -189,10 +194,20 @@ var cadi = {
 
     drive: function(){
         if (this.started) {
-            alert(this.make + " " + this.model + " goes zoom zoom!");
+            if (this.fuel > 0) {
+                alert(this.make + " " + this.model + " goes zoom zoom!");
+                this.fuel -= 1;
+            } else {
+                alert("Uh oh, out of fuel.");
+                this.stop();
+            }
         } else {
             alert("You need to start the engine first.");
         }
+    },
+
+    addFuel: function(amount) {
+        this.fuel = this.fuel + amount;
     }
 };
 
@@ -206,6 +221,7 @@ var fiat = {
     convertible: false,
     mileage: 88000,
     started: false,
+    fuel: 0,
     start: function(){
         this.started = true;
     },
@@ -220,6 +236,10 @@ var fiat = {
         } else {
             alert("You need to start the engine first.");
         }
+    },
+
+    addFuel: function(amount) {
+        this.fuel = this.fuel + amount;
     }
 };
 
@@ -232,6 +252,7 @@ var chevy = {
     convertible: false,
     mileage: 1021,
     started: false,
+    fuel: 0,
     start: function(){
         this.started = true;
     },
@@ -246,7 +267,18 @@ var chevy = {
         } else {
             alert("You need to start the engine first.");
         }
+    },
+
+    addFuel: function(amount) {
+        this.fuel = this.fuel + amount;
     }
 };
 
+cadi.start();
 cadi.drive();
+cadi.addFuel(500);
+cadi.start();
+cadi.drive();
+cadi.drive();
+cadi.drive();
+cadi.stop();
