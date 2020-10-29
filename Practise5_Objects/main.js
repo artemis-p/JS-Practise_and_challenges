@@ -170,46 +170,46 @@
 
 
 
-var cadi = {
-    make: "GM",
-    model: "Cadillac",
-    year: 1955,
-    color: "tan",
-    passengers: 5,
-    convertible: false,
-    mileage: 12892,
-    started: false,
-    fuel: 0,
-    start: function(){
-        if (this.fuel > 0) {
-            this.started = true; 
-        } else {
-            alert("The car is on empty, fill up before starting!")
-        }
-    },
+// var cadi = {
+//     make: "GM",
+//     model: "Cadillac",
+//     year: 1955,
+//     color: "tan",
+//     passengers: 5,
+//     convertible: false,
+//     mileage: 12892,
+//     started: false,
+//     fuel: 0,
+//     start: function(){
+//         if (this.fuel > 0) {
+//             this.started = true; 
+//         } else {
+//             alert("The car is on empty, fill up before starting!")
+//         }
+//     },
 
-    stop: function(){
-        this.started = false;
-    },
+//     stop: function(){
+//         this.started = false;
+//     },
 
-    drive: function(){
-        if (this.started) {
-            if (this.fuel > 0) {
-                alert(this.make + " " + this.model + " goes zoom zoom!");
-                this.fuel -= 1;
-            } else {
-                alert("Uh oh, out of fuel.");
-                this.stop();
-            }
-        } else {
-            alert("You need to start the engine first.");
-        }
-    },
+//     drive: function(){
+//         if (this.started) {
+//             if (this.fuel > 0) {
+//                 alert(this.make + " " + this.model + " goes zoom zoom!");
+//                 this.fuel -= 1;
+//             } else {
+//                 alert("Uh oh, out of fuel.");
+//                 this.stop();
+//             }
+//         } else {
+//             alert("You need to start the engine first.");
+//         }
+//     },
 
-    addFuel: function(amount) {
-        this.fuel = this.fuel + amount;
-    }
-};
+//     addFuel: function(amount) {
+//         this.fuel = this.fuel + amount;
+//     }
+// };
 
 
 var fiat = {
